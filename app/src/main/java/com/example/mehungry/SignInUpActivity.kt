@@ -4,17 +4,12 @@ import androidx.annotation.StringRes
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.widthIn
-import androidx.compose.material3.Button
 import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.dimensionResource
-import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.unit.dp
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
@@ -22,6 +17,9 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
+import com.example.mehungry.ui.components.SignInAuthScreen
+import com.example.mehungry.ui.components.SignInScreen
+import com.example.mehungry.ui.components.SignUpScreen
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -66,60 +64,23 @@ fun SignInUpApp(
             }
 
             composable(route = SignInUpScreen.SignUp.name) {
-                Column(
+                SignUpScreen(
+                    onBackToSignInClick = { navController.navigate(SignInUpScreen.SignIn.name) },
                     modifier = Modifier
                         .fillMaxSize()
                         .padding(dimensionResource(R.dimen.padding_medium))
-                ){
-                    Text(text = "Sign Up Screen")
-                }
+                )
             }
 
             composable(route = SignInUpScreen.Authorize.name) {
-                Column(
+                SignInAuthScreen(
+                    onBackToSignInClick = { navController.navigate(SignInUpScreen.SignIn.name) },
                     modifier = Modifier
                         .fillMaxSize()
                         .padding(dimensionResource(R.dimen.padding_medium))
-                ){
-                    Text(text = "Sign In Authorize Processing Screen")
-                }
+                )
             }
         }
-    }
-}
-
-@Composable
-fun SignInScreen(
-    onSignUpNavButtonClick: () -> Unit,
-    onSignInButtonClick: () -> Unit,
-    modifier: Modifier = Modifier
-){
-    Column {
-        Text(text = "Sign In Screen")
-
-        SignInUpAuthButton(
-            labelResourceId = R.string.sign_in_auth_button_text,
-            onClick = onSignInButtonClick
-        )
-        
-        SignInUpAuthButton(
-            labelResourceId = R.string.sign_up_nav_button_text,
-            onClick = onSignUpNavButtonClick
-        )
-    }
-}
-
-@Composable
-fun SignInUpAuthButton(
-    @StringRes labelResourceId: Int,
-    onClick: () -> Unit,
-    modifier: Modifier = Modifier
-) {
-    Button(
-        onClick = onClick,
-        modifier = modifier.widthIn(min = 250.dp)
-    ) {
-        Text(stringResource(labelResourceId))
     }
 }
 

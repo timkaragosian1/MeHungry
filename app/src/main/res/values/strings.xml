@@ -10,6 +10,8 @@
 
     <string name="sign_in_auth_button_text">Sign In</string>
     <string name="sign_up_nav_button_text">Need an Account?</string>
+    <string name="sign_up_back_button_text">Back to Sign In</string>
+
 
     <!-- SCREEN TITLES -->
     <string name="title_sign_in">Sign In</string>
