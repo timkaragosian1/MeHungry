@@ -1,3 +1,29 @@
 <resources>
     <string name="app_name">MeHungry</string>
+    <string name="hello">Hello</string>
+    <string name="welcome">Welcome</string>
+    <string name="intro_message">Intro Message</string>
+
+    <string name="welcome_screen_image">R.drawable.mehungry_logo_transparent_bkg</string>
+    <string name="go_to_sign_in">Go To Sign In</string>
+    <string name="no_account_yet_msg">No Account Yet?</string>
+
+    <string name="sign_in_auth_button_text">Sign In</string>
+    <string name="sign_up_nav_button_text">Need an Account?</string>
+
+    <!-- SCREEN TITLES -->
+    <string name="title_sign_in">Sign In</string>
+    <string name="title_sign_up">Sign Up</string>
+    <string name="title_authorize_sign_in">Auth Sign In</string>
+    <string name="title_user_profile">User Profile</string>
+    <string name="title_app_settings">App Settings</string>
+    <string name="title_evaluate_home">Eval Home</string>
+    <string name="title_evaluate_profile">Eval Profile</string>
+    <string name="title_evaluate_processing">Eval Processing</string>
+    <string name="title_history">History</string>
+    <string name="title_app_home">Home</string>
+
+
+
+
 </resources>
